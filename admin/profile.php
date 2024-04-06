@@ -27,7 +27,7 @@
                      ?>
                 </h2>
                 <p class="post-count">Posts: <span>0</span></p>
-                <p class="followers-count">Followers: <span>0</span></p>
+                <p class="followers-count">Followers: <span>1</span></p>
                 <p class="following-count">Following: <span>0</span></p>
             </div>
         </div>
