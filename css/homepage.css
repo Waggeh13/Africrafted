@@ -1,0 +1,140 @@
+body{
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #D6D3B6;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    }
+
+.top-bar{
+    background-color: #EC6519;
+    width: 100%;
+    height: 100px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bell-profile{
+    display: flex;
+    margin-right: 66px;
+}
+
+.profile-picture-frame {
+    width: 50px; 
+    height: 50px;
+    border: 3px solid orange;
+    border-radius: 50%; 
+    overflow: hidden; 
+    margin-left: 4px;
+}
+
+.profile-picture-frame:hover{
+    border: 3px solid rgb(255, 89, 0);
+}
+
+.icons{
+    margin-left: 12px;
+    margin-top: 15px;
+}
+
+.icons i {
+    margin-right: 20px; 
+}
+
+
+
+.fas{
+    font-size: 28px;
+    justify-content: space-between;
+    
+}
+
+.logo{
+    margin-top: 8px;
+}
+
+.post-work{
+width:1300px;
+height: 100px;
+background-color: #EC6519;
+border: 2px #EC6519;
+padding: 40px;
+border-radius: 12px;
+align-content: center;
+margin: 0;
+margin-top: -120px;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 8px;
+
+}
+
+.text-box{
+    width: 900px;
+    height:45px;
+    background-color: white;
+    border: white;
+    border-radius: 8px;
+    align-content: center;
+    margin-bottom: 12px;
+    margin-top: 10px;
+    
+}
+
+.centered-text{
+    font-size: 20px;
+    font-weight: medium;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #7D7D7D;
+}
+
+.btn{
+    background-color: red;
+    border: 2px solid red;
+    width: 200px;
+    height: 80px;
+    border-radius: 15px;  
+    
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #f9f5f5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+button:hover{
+    background-color: rgb(247, 56, 56);
+    border: rgb(247, 56, 56);
+}
+
+.follow-popular{
+    margin-top: 40px;
+    margin-right: 1226px;
+}
+
+span{
+font-family: 'Poppins', sans-serif;
+font-size: larger;
+font-weight: medium;
+}
+
+
+.line{
+    width:92%;
+    text-align:left;
+    border: 1px solid black;
+    margin: 10px auto;
+}

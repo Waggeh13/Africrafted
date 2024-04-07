@@ -9,7 +9,8 @@
     
     <!-- Add jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script src="../js/registers.js"></script>
+    
     <style>
         #form-messages{
             background-color: rgb(255, 232, 232);
@@ -24,18 +25,17 @@
         }
 
         .error-message {
-            color: red; /* Set text color to red */
-            font-size: 12px; /* Optional: Adjust font size */
-            font-weight: bold; /* Optional: Adjust font weight */
+            color: red; 
+            font-size: 12px; 
+            font-weight: bold; 
         }
     </style>
         
-    <script src="../js/register.js"></script>
 </head>
 <body>
     <div class="register_form">
         <div class="wrapper">
-            <form id="registerForm" action="check_register_action.php" method="post">
+            <form id="registerForm" action="../action/register_user_action.php" method="post">
                 <h1>Register</h1>
                 <ul id="form-messages"></ul>
 

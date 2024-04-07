@@ -1,0 +1,142 @@
+body{
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #D6D3B6;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.top-bar{
+    background-color: #EC6519;
+    width: 100%;
+    height: 100px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bell-profile{
+    display: flex;
+    margin-right: 66px;
+}
+
+.icons{
+    margin-left: 12px;
+    margin-top: 40px;
+}
+
+.icons i {
+    margin-right: 20px; 
+}
+
+.fas{
+    font-size: 28px;
+    justify-content: space-between;  
+}
+
+.home{
+    cursor: pointer; 
+    color: black; 
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    transition: background-color 0.3s;
+}
+
+.home:hover{
+    color: white;
+
+}
+
+
+.profile {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.edit-button {
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color:  red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #f9f5f5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+button:hover{
+    background-color: rgb(247, 56, 56);
+    border: rgb(247, 56, 56);
+}
+
+.profile-photo img {
+    margin-top: -150px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #EC6519;
+}
+
+.profile-info {
+    flex-grow: 1;
+    align-content: center;
+    
+}
+
+.username {
+    margin: 0;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.post-count,
+.followers-count,
+.following-count {
+    margin: 5px 0;
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.counts{
+    display:flex;
+    margin-left: 10px;
+}
+
+.line {
+    width: 100%; /* Adjust the width as needed */
+    border: 1px solid black;
+    margin: 10px auto; /* Set margin to auto to center horizontally */
+}
+
+.profile-content {
+    /* Add styles for the content section */
+}
