@@ -16,8 +16,6 @@ $(document).ready(function(){
 
     $("#btn-submit").click(function(event){
         event.preventDefault();
-
-        // Your validation and AJAX code here
         
         const username = $("#username");
         const email = $("#email");
@@ -83,7 +81,7 @@ $(document).ready(function(){
             success: function(response){
                 if (response.trim() === "success") {
                     // Redirect to the login page upon successful registration
-                    window.location.href = "../admin/Home.php";
+                    window.location.href = "..login/logn.php";
                 } else {
                     // Display error message
                     $(".form-message").html(response).show();
