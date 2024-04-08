@@ -3,7 +3,7 @@ session_start();
 include '../settings/connection.php';
 
 // Check if the user is logged in
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['user_id'])) {
     header("Location: ../login/login.php");
     exit(); // Stop further execution
 }
@@ -29,17 +29,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
-// Check if the delete button is clicked
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $query = "DELETE FROM users WHERE user_id={$_SESSION['user_id']}";
-
-    if (mysqli_query($con, $query)) {
-        header("Location: ../login/login.php");
-        exit();
-    } else {
-        echo "Error deleting record: " . mysqli_error($con);
-    }
-} else {
-    echo "Invalid request"; 
-}
-?>

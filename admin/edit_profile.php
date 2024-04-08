@@ -31,6 +31,8 @@ if ($result && mysqli_num_rows($result) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
     <link rel="stylesheet" href="../css/edit.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
 <div class="top-bar">
@@ -39,7 +41,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     </div>
 </div>
 <h2>Edit Profile</h2>
-<form action="../action/update_profile_action.php" method="post" enctype="multipart/form-data">
+<form action="../action/update_profile_actions.php" method="post" enctype="multipart/form-data">
     <!-- Your form fields for editing profile information -->
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" value="<?php echo $username; ?>" required>
@@ -53,6 +55,6 @@ if ($result && mysqli_num_rows($result) > 0) {
     <button type="submit" name="update" id="update-profile-btn">Update Profile</button>
     <button type="submit" name="delete" id="confirm-delete-btn">Delete Account</button>
 </form>
-<script src="../js/edit.js"></script>
+<script src="../js/edits.js"></script>
 </body>
 </html>
