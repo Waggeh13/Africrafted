@@ -24,6 +24,7 @@ session_start();
                         <i class="fas fa-comment"></i>
                         <i class="fas fa-bell"></i>
                     </div>
+
                     
                     <div class="profile-picture-frame">
                         <a href="../admin/profile.php">
@@ -34,6 +35,10 @@ session_start();
                         </a>
                     </div>
 
+                </div>
+
+                <div class="home" id="homeLink">
+                    <h6>Logout<h6>
                 </div>
 
             </div>
@@ -60,6 +65,12 @@ session_start();
 
         </div>
 
+        
+    <script>
+        document.getElementById("homeLink").addEventListener("click", function() {
+    window.location.href = "../login/login.php";
+    });
+    </script>
 
     </body>
 </html>

@@ -23,6 +23,22 @@ body{
     z-index: 1000;
 }
 
+.home{
+    cursor: pointer; 
+    color: black; 
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    transition: background-color 0.3s;
+    margin-right: 20px;
+    margin-left: -950px;
+}
+
+.home:hover{
+    color: white;
+
+}
+
 .bell-profile{
     display: flex;
     margin-right: 66px;

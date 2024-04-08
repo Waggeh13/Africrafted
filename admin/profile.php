@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,56 +67,8 @@
             <hr  class="line">
 
             <div class="profile-content">
-                <!-- Add user's posts or other content here -->
-                <div class="art-post">
-                    <div class="art-space">
 
-                    </div>
-
-                     <!-- Profile information -->
-                    <div class="profile-info">
-
-                        <div class="photo-icon">
-                            <img src="../image/AfricanArt.jpg" alt="Profile Picture">
-                        </div>
-
-                        <div class="name">
-                            <?php
-                                echo $username;
-                            ?>
-                        </div>
-                    </div>
-
-                    <!-- Comment and like icons -->
-                    <div class="icons-post">
-                        <i class="fas fa-comment"></i>
-                        <i class="fas fa-heart"></i>
-                    </div>
-
-                    <!-- Comment section -->
-                    <div class="comment-section">
-                        <!-- Add comment form or display comments here -->
-                    </div>
-
-                </div>
-
-                <div class="art-post">
-                    <div class="art-space">
-
-                    </div>
-                </div>
-
-                <div class="art-post">
-                    <div class="art-space">
-
-                    </div>
-                </div>
-
-                <div class="art-post">
-                    <div class="art-space">
-
-                    </div>
-                </div>
+            <?php include '../action/get_art_action.php'; ?>
 
             </div>
         </div>
