@@ -26,4 +26,19 @@ $(document).ready(function(){
             }
         });
     });
+
+    // Function to display pop-up confirmation message
+    function confirmDelete() {
+        // Display confirmation dialog
+        var confirmed = confirm("Are you sure you want to delete your account?");
+        
+        // If user confirms, redirect to delete_profile_action.php
+        if (confirmed) {
+            window.location.href = "../action/delete_profile_action.php";
+        }
+    }
+
+    
+
+      
 });
