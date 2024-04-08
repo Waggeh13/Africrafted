@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="../css/profilepage.css">
+    <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../js/edit.js"></script>
@@ -42,16 +42,15 @@
 
                 <button onclick="window.location.href='../admin/edit_profile.php'" class="edit-button">Edit profile</button>
 
-
-                <div class="profile-info">
-                    
-                    <h2 class="username">
+                <h2 class="username">
                     <?php
                         include '../action/get_username.php';
                         echo $username;
                     ?>
                     </h2>
 
+                <div class="profile-info">
+                    
                     <div class="counts">
                         <p class="post-count">Posts: <span>0</span></p>
                         <p class="followers-count">Followers: <span>0</span></p>
@@ -64,6 +63,56 @@
 
             <div class="profile-content">
                 <!-- Add user's posts or other content here -->
+                <div class="art-post">
+                    <div class="art-space">
+
+                    </div>
+
+                     <!-- Profile information -->
+                    <div class="profile-info">
+
+                        <div class="photo-icon">
+                            <img src="../image/AfricanArt.jpg" alt="Profile Picture">
+                        </div>
+
+                        <div class="name">
+                            <?php
+                                echo $username;
+                            ?>
+                        </div>
+                    </div>
+
+                    <!-- Comment and like icons -->
+                    <div class="icons-post">
+                        <i class="fas fa-comment"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+
+                    <!-- Comment section -->
+                    <div class="comment-section">
+                        <!-- Add comment form or display comments here -->
+                    </div>
+
+                </div>
+
+                <div class="art-post">
+                    <div class="art-space">
+
+                    </div>
+                </div>
+
+                <div class="art-post">
+                    <div class="art-space">
+
+                    </div>
+                </div>
+
+                <div class="art-post">
+                    <div class="art-space">
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </body>

@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include '../settings/connection.php'; 
 
 if (isset($_SESSION['user_id'])) {

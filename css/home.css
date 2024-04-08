@@ -20,6 +20,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
 }
 
 .bell-profile{
@@ -70,7 +71,7 @@ padding: 40px;
 border-radius: 12px;
 align-content: center;
 margin: 0;
-margin-top: -120px;
+margin-top: 150px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -137,4 +138,78 @@ font-weight: medium;
     text-align:left;
     border: 1px solid black;
     margin: 10px auto;
+}
+
+
+.art-post{
+    margin-top: 20px;
+    border: 2px solid white;
+    border-radius: 8px;
+    width: 250px;
+    height: 349px;
+    background-color: white;
+    margin-left: 8px;
+  
+}
+
+.art-space{
+    margin-top: 80px;
+    border: 2px solid rgb(232, 200, 132);
+    width: 245px;
+    height: 260px;
+    background-color: rgb(232, 200, 132);
+    margin-left: -2px;
+    margin: 2px auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.icons-post{
+    margin-top: -34px;
+    margin-left: 180px;
+}
+
+.icons-post i {
+    color: rgb(250, 234, 210);
+    font-size: 140%;
+    margin-right: 10px;
+    transition: color 0.3s ease; 
+}
+
+.icons-post i:hover {
+    color: #EC6519; /* Change color on hover */
+}
+
+.profile-info .photo-icon img {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
+    margin-left: 8px; 
+    margin-top: 8px;
+}
+
+.name{
+    margin: 0;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.all{
+    margin-top: -80px;
+    position: relative;
+    z-index: 1;
+    margin-left: 10px;
+}
+
+.profile-info{
+    display: flex;
+}
+
+.home-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

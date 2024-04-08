@@ -18,10 +18,9 @@ if(isset($_SESSION['user_id'])) {
         
         // Now $profile_picture contains the path to the user's profile picture
     } else {
-        $profile_picture = "C:/xampp/htdocs/Africrafted/uploads/Potato.png"; 
+        $profile_picture = "../uploads/Potato.png"; // Use relative or absolute URL
     }
 } else {
-    $profile_picture = "C:/xampp/htdocs/Africrafted/uploads/Potato.png";
+    $profile_picture = "../uploads/Potato.png"; // Use relative or absolute URL
 }
-
-
+?>
