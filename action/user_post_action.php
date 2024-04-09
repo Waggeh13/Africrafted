@@ -3,24 +3,26 @@ include '../settings/connection.php';
 
 echo '<link rel="stylesheet" href="../css/home.css">';
 
-// Query to retrieve the image URL, the name of the user who posted it, and the user ID
-$query = "SELECT artworks.image_url, users.username, artworks.artwork_id, artworks.user_id FROM artworks JOIN users ON artworks.user_id = users.user_id";
+// Query to retrieve the image URL and the name of the user who posted it
+$query = "SELECT artworks.image_url, users.username, artworks.artwork_id FROM artworks JOIN users ON artworks.user_id = users.user_id WHERE artworks.user_id = ?";
 $stmt = mysqli_prepare($con, $query);
+
+// Bind parameters
+mysqli_stmt_bind_param($stmt, "i", $_SESSION['user_id']);
 
 // Execute the statement
 mysqli_stmt_execute($stmt);
 
 // Bind the result
-mysqli_stmt_bind_result($stmt, $imageUrl, $postedBy, $artworkId, $userId);
+mysqli_stmt_bind_result($stmt, $imageUrl, $postedBy, $artworkId);
 
-// Store all image URLs, usernames, and user IDs in an array
+// Store all image URLs and the corresponding usernames in an array
 $posts = [];
 while (mysqli_stmt_fetch($stmt)) {
     $posts[] = [
         'imageUrl' => $imageUrl,
         'postedBy' => $postedBy,
-        'artworkId' => $artworkId,
-        'userId' => $userId
+        'artworkId' => $artworkId
     ];
 }
 
@@ -38,9 +40,7 @@ mysqli_stmt_close($stmt);
         <div class="profile-info">
             <div class="photo-icon">
                 <!-- Display the user's profile picture -->
-                <a href="../admin/profile.php?user_id=<?php echo $post['userId']; ?>">
-                    <img src="../image/AfricanArt.jpg" alt="Profile Picture">
-                </a>
+                <img src="../image/AfricanArt.jpg" alt="Profile Picture">
             </div>
             <div class="name">
                 <?php echo $post['postedBy']; ?>
@@ -48,12 +48,19 @@ mysqli_stmt_close($stmt);
         </div>
         <!-- Comment and like icons -->
         <div class="icons-post">
-            
-        <a href="comment.php?artworkId=<?php echo $post['artworkId']; ?>">
-            <i class="fas fa-comment"></i>
-        </a>
-
+            <i class="fas fa-comment" onclick="showCommentSection(event, <?php echo $post['artworkId']; ?>)"></i>
             <i class="fas fa-heart"></i>
+        </div>
+        <!-- Comment section -->
+        <div class="comment-section hidden" id="comment-section-<?php echo $post['artworkId']; ?>">
+            <!-- Add comment form or display comments here -->
+            <form class="comment-form" onsubmit="submitComment(event, <?php echo $post['artworkId']; ?>)">
+                <textarea name="comment" placeholder="Write a comment..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="comments">
+                <!-- Comments will be dynamically added here -->
+            </div>
         </div>
     </div>
 <?php endforeach; ?>

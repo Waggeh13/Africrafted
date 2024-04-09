@@ -1,11 +1,10 @@
 <?php
-session_start(); 
 include '../settings/connection.php';
 
-// Check if the user is logged in
-if(isset($_SESSION['user_id'])) {
-    // Get the user ID from the session
-    $user_id = $_SESSION['user_id'];
+// Check if the user ID is provided in the URL
+if(isset($_GET['user_id'])) {
+    // Get the user ID from the URL
+    $user_id = $_GET['user_id'];
 
     $query = "SELECT profile_picture FROM users WHERE user_id = $user_id";
 

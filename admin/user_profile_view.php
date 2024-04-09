@@ -40,7 +40,7 @@ session_start();
                     <img src="../image/AfricanArt.jpg" alt="Profile Picture">
                 </div>
 
-                <button onclick="window.location.href='../admin/edit_profile.php'" class="edit-button">Edit profile</button>
+                <button>Follow</button>
 
                 <h2 class="username">
                     <?php

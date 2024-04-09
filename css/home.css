@@ -23,7 +23,7 @@ body{
     z-index: 1000;
 }
 
-.home{
+.logout{
     cursor: pointer; 
     color: black; 
     font-weight: bold;
@@ -31,17 +31,17 @@ body{
     font-size: 28px;
     transition: background-color 0.3s;
     margin-right: 20px;
-    margin-left: -950px;
+    margin-left: -1100px;
 }
 
-.home:hover{
+.logout:hover{
     color: white;
 
 }
 
 .bell-profile{
     display: flex;
-    margin-right: 66px;
+    margin-right: 80px;
 }
 
 .profile-picture-frame {

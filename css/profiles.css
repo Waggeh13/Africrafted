@@ -10,7 +10,6 @@ body{
     flex-direction: column;
 }
 
-
 .top-bar{
     background-color: #EC6519;
     width: 100%;
@@ -21,6 +20,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
 }
 
 .bell-profile{
@@ -49,17 +49,17 @@ body{
     font-family: 'Poppins', sans-serif;
     font-size: 28px;
     transition: background-color 0.3s;
+    margin-left: 500px;
 }
 
 .home:hover{
     color: white;
-
 }
-
 
 .profile {
     max-width: 800px;
     margin: 0 auto;
+ 
 }
 
 .profile-header {
@@ -96,7 +96,7 @@ button:hover{
 }
 
 .profile-photo img {
-    margin-top: -150px;
+    margin-top: 130px;
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -111,8 +111,7 @@ button:hover{
 }
 
 .username {
-    margin: 0;
-    margin-left: 15px;
+    margin-left: 7px auto;
     margin-top: 10px;
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
@@ -122,28 +121,92 @@ button:hover{
 .followers-count,
 .following-count {
     margin: 5px 0;
-    margin-left: 20px;
+    margin-left: 10px;
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: rgb(71, 71, 71);
 }
 
 .counts{
     display:flex;
     margin-left: 10px;
+    margin-top: 30px;
 }
 
 .line {
-    width: 100%; /* Adjust the width as needed */
+    width: 100%; 
     border: 1px solid black;
-    margin: 10px auto; /* Set margin to auto to center horizontally */
+    margin: 10px auto; 
 }
 
 .profile-content {
-    /* Add styles for the content section */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .art-post{
+    margin-top: 20px;
     border: 2px solid white;
     border-radius: 8px;
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 349px;
+    background-color: white;
+    position: relative;
+    margin-left: 8px;
+}
+
+.art-space{
+    margin-top: 20px;
+    border: 2px solid rgb(232, 200, 132);
+    width: 245px;
+    height: 260px;
+    background-color: rgb(232, 200, 132);
+    margin-left: -2px;
+    margin: 2px auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative; 
+    z-index: -3;
+}
+
+.icons-post{
+    margin-top: -34px;
+    margin-left: 180px;
+}
+
+.icons-post i {
+    color: rgb(250, 234, 210);
+    font-size: 140%;
+    margin-right: 10px;
+    transition: color 0.3s ease; 
+}
+
+.icons-post i:hover {
+    color: #EC6519; 
+}
+
+.profile-info .photo-icon img {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
+    margin-left: 8px; 
+    margin-top: 8px;
+}
+
+.name{
+    margin: 0;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.profile-info{
+    display: flex;
+}
+
+.comment-section {
+    /* Styles for the comment section */
 }

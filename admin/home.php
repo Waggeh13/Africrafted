@@ -19,25 +19,16 @@ session_start();
                 </div>
 
                 <div class="bell-profile">
-
-                    <div class="icons">
-                        <i class="fas fa-comment"></i>
-                        <i class="fas fa-bell"></i>
-                    </div>
-
                     
                     <div class="profile-picture-frame">
                         <a href="../admin/profile.php">
-                            <?php
-                                
-                                echo '<img src="' . $profile_picture . '" alt="Profile Picture">';
-                            ?>
+                            <img src="<?php echo $profile_picture; ?>" alt="Profile Picture">
                         </a>
                     </div>
 
                 </div>
 
-                <div class="home" id="homeLink">
+                <div class="logout" id="logoutLink">
                     <h6>Logout<h6>
                 </div>
 
@@ -67,7 +58,7 @@ session_start();
 
         
     <script>
-        document.getElementById("homeLink").addEventListener("click", function() {
+        document.getElementById("logoutLink").addEventListener("click", function() {
     window.location.href = "../login/login.php";
     });
     </script>
