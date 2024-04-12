@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["username"]) && !empty
 
     // Process uploaded profile picture
     $profile_picture = $_FILES["profile-picture"]["name"]; // Get the name of the uploaded file
-    $target_dir = "C:/xampp/htdocs/Africrafted/uploads/"; // Correct directory where the file will be stored
+    $target_dir = "/opt/lampp/htdocs/Africrafted/uploads/"; // Correct directory where the file will be stored
     $target_file = $target_dir . basename($profile_picture); // Path of the file on the server
     move_uploaded_file($_FILES["profile-picture"]["tmp_name"], $target_file); // Move the uploaded file to the target directory
 
