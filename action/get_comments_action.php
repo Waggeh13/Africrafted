@@ -19,9 +19,9 @@ while ($row = $result->fetch_assoc()) {
     $comment_time = $row['comment_date'];
     $artwork_id = $row['artwork_id'];
 
-    // Check if the logged-in user is the owner of the comment
+   
     if ($_SESSION['user_id'] == $uid) {
-        // Start a new container for each comment
+        
         $posts .= '<div class="comment-container" data-artwork-id="'.$artwork_id.'">'; 
 
         $posts .= '<div class="comment-box">
@@ -36,7 +36,7 @@ while ($row = $result->fetch_assoc()) {
                        </div>
                    </div>';
 
-        // Close the comment container
+      
         $posts .= '</div>'; 
     }
 }
@@ -61,10 +61,6 @@ echo $posts;
 
     .comment-text {
         margin-bottom: 5px;
-    }
-
-    .comment-time {
-        /* Add your styles for the comment time */
     }
     
     .delete-comment-btn {

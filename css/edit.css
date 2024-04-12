@@ -1,8 +1,7 @@
-/* edit.css */
 
 body {
     display: flex;
-    flex-direction: column; /* Ensure content stacks vertically */
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     background-color: #D6D3B6;
@@ -21,13 +20,13 @@ body {
 }
 
 .logo img {
-    width: 250px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-left: 20px; /* Adjust spacing */
+    width: 250px;
+    height: auto; 
+    margin-left: 20px; 
 }
 
 h2 {
-    margin-top: 120px; /* Add margin to push it below the top bar */
+    margin-top: 120px; 
 }
 
 form {
@@ -35,7 +34,7 @@ form {
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
-    width: 300px; /* Adjust width as needed */
+    width: 300px; 
 }
 
 label {
@@ -46,33 +45,33 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="file"] {
-    width: calc(100% - 16px); /* Adjust width to account for padding and border */
+    width: calc(100% - 16px);
     padding: 8px;
-    margin-bottom: 10px; /* Add spacing between inputs */
+    margin-bottom: 10px; 
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
 button[type="submit"] {
-    width: 100%; /* Make buttons fill container */
+    width: 100%;
     padding: 10px;
     border: none;
     background-color: #EC6519;
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px; /* Add spacing between buttons */
+    margin-top: 10px;
     margin-bottom:10px ;
 }
 
 button[type="submit"]:hover {
-    background-color: #ff6a33; /* Adjust hover color as needed */
+    background-color: #ff6a33; 
     
 }
 
 button[type="submit"]:last-child {
-    margin-top: 0; /* Remove margin from last button */
+    margin-top: 0;
 }
 
 

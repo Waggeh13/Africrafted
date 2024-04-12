@@ -92,13 +92,13 @@
         </form>
         
         <div id="comments-container">
-            <!-- Comments will be dynamically added here -->
+           
             <?php include '../action/get_comments_action.php'; ?>
         </div>
     </div>
     
     <script>
-        // Your JavaScript code
+       
         function closeCommentSection() {
             window.location.href = "../admin/home.php";
         }

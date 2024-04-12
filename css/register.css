@@ -98,13 +98,13 @@ body{
 }
 
 #image-preview {
-    text-align: center; /* Center align the content */
-    margin-top: 20px; /* Adjust margin-top as needed */
-    margin-bottom: 20px; /* Add margin bottom for spacing */
+    text-align: center; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
 }
 
 #profile-picture {
-    display: none; /* Hide the input element */
+    display: none; 
 }
 
 .upload-label {

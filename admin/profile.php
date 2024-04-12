@@ -1,5 +1,16 @@
 <?php
 session_start();
+
+if(isset($_GET['user_id'])) {
+  
+    $user_id = $_GET['user_id'];
+
+} else {
+
+    echo "User ID not provided in URL";
+}
+
+
 ?>
 
 
@@ -37,7 +48,8 @@ session_start();
             <div class="profile-header">
 
                 <div class="profile-photo">
-                    <img src="../image/AfricanArt.jpg" alt="Profile Picture">
+                    <img src="<?php include '../action/profile_picture_action.php'; ?>" alt="Profile Picture">
+
                 </div>
 
                 <button onclick="window.location.href='../admin/edit_profile.php'" class="edit-button">Edit profile</button>

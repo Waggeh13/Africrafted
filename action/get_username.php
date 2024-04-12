@@ -16,9 +16,9 @@ if (isset($_SESSION['user_id'])) {
             $username = "Unknown"; 
         }
     } else {
-        // Handle query error
+        
         $username = "Error"; 
-        // Debugging: Output the MySQL error message
+        
         echo "MySQL Error: " . mysqli_error($con) . "<br>";
     }
 } else {

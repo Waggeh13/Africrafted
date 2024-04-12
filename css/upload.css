@@ -1,8 +1,8 @@
-/* upload.css */
+
 
 body {
     display: flex;
-    flex-direction: column; /* Ensure content stacks vertically */
+    flex-direction: column; 
     align-items: center;
     min-height: 100vh;
     background-color: #D6D3B6;
@@ -43,9 +43,9 @@ body {
 
 .upload-form input[type="file"],
 .upload-form textarea {
-    width: calc(100% - 16px); /* Adjust width to account for padding and border */
+    width: calc(100% - 16px); 
     padding: 8px;
-    margin-bottom: 10px; /* Add spacing between inputs */
+    margin-bottom: 10px; 
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;

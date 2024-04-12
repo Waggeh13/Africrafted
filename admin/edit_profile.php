@@ -32,7 +32,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     <title>Edit Profile</title>
     <link rel="stylesheet" href="../css/edit.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Include SweetAlert library -->
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
@@ -45,7 +45,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         </div>
         <h2>Edit Profile</h2>
         <form action="../action/update_profile_actions.php" method="post" enctype="multipart/form-data">
-            <!-- Your form fields for editing profile information -->
+            
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" value="<?php echo $username; ?>" required>
             <br>
