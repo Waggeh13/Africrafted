@@ -51,36 +51,60 @@ mysqli_stmt_close($stmt);
             <i class="fas fa-comment"></i>
         </a>
 
-        <i class="fas fa-heart like-icon" data-artwork-id="15"></i>
-        <span class="like-count">0</span> Likes
+        <i class="fas fa-heart like-icon" id="like-icon"></i>
+        <span id="like-count">0</span>
+
 
         </div>
     </div>
 <?php endforeach; ?>
 
-<style>
-    .like-icon.liked {
-    color: red;
-}
-
 </style>
 
 <script>
-$(document).ready(function(){
+
+const likeIcon = document.getElementById('like-icon');
+const likeCount = document.getElementById('like-count');
+
+let count = 0;
+
+
+likeIcon.addEventListener('click', function() {
+    
+    likeIcon.classList.toggle('liked');
+
+    
+    if (likeIcon.classList.contains('liked')) {
+        count++;
+    } else {
+        count--;
+    }
+
+
+    likeCount.textContent = count;
+
    
-    $(".like-icon").click(function() {
-       
-        $(this).toggleClass("liked");
-        
-       
-        var artworkId = $(this).data('artwork-id');
-        
-       
-        console.log("Liked artwork ID: " + artworkId);
-    });
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '../action/like_action.php');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            console.log(xhr.responseText);
+        } else {
+            console.error('Error:', xhr.statusText);
+        }
+    };
+    const userId = 1; 
+    const artworkId = 1; 
+    xhr.send('user_id=' + encodeURIComponent(userId) + '&artwork_id=' + encodeURIComponent(artworkId));
 });
 
-
-
 </script>
+
+<style>
+
+.like-icon.liked {
+    color: red; 
+    cursor: pointer; 
+}
 
