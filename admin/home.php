@@ -59,7 +59,7 @@ session_start();
         
     <script>
         document.getElementById("logoutLink").addEventListener("click", function() {
-    window.location.href = "../login/login.php";
+    window.location.href = "index.php";
     });
     </script>
 
