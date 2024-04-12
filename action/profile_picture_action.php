@@ -1,35 +1,25 @@
 <?php
 include '../settings/connection.php';
 
-
+// Check if the user ID is provided in the URL
 if(isset($_GET['user_id'])) {
-    
+    // Get the user ID from the URL
     $user_id = $_GET['user_id'];
 
-    $query = "SELECT profile_picture FROM users WHERE user_id = ?";
+    $query = "SELECT profile_picture FROM users WHERE user_id = $user_id";
 
-    $stmt = mysqli_prepare($con, $query);
-    
-   
-    mysqli_stmt_bind_param($stmt, "i", $user_id);
+    $result = mysqli_query($con, $query);
 
-    
-    mysqli_stmt_execute($stmt);
-
-    mysqli_stmt_bind_result($stmt, $profile_picture);
-
-    mysqli_stmt_fetch($stmt);
-
- 
-    mysqli_stmt_close($stmt);
-
-    
-    if($profile_picture) {
-        $profile_picture_path = $profile_picture;
+    // Check if the query was successful and at least one row was returned
+    if($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $profile_picture = $row['profile_picture'];
+        
+        // Now $profile_picture contains the path to the user's profile picture
     } else {
-        $profile_picture_path = "../uploads/Potato.png"; 
+        $profile_picture = "../uploads/Potato.png"; // Use relative or absolute URL
     }
 } else {
-    $profile_picture_path = "../uploads/Potato.png"; 
+    $profile_picture = "../uploads/Potato.png"; // Use relative or absolute URL
 }
 ?>

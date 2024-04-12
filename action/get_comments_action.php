@@ -12,8 +12,7 @@ while ($row = $result->fetch_assoc()) {
     $user_sql = "SELECT * FROM users WHERE user_id =$uid";
     $user_result = $con->query($user_sql);
     $user_row = $user_result->fetch_assoc();
-    $username = $user_row['username'];
-   
+    $username = $user_row['username'];  
     $comment_id = $row['comment_id'];
     $comment = $row['comment'];
     $comment_time = $row['comment_date'];

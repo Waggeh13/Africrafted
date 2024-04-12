@@ -1,34 +1,21 @@
 <?php
-session_start();
-include '../settings/connection.php';
+require_once("../settings/connection.php");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
-    $userId = $_SESSION['user_id'];
-    $artworkId = $_POST['artworkId'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   
+    $user_id = $_POST['user_id'];
+    $artwork_id = $_POST['artwork_id'];
 
-    
-    $checkQuery = "SELECT * FROM likes WHERE user_id = $userId AND artwork_id = $artworkId";
-    $checkResult = mysqli_query($con, $checkQuery);
+    // Insert like data into the database
+    $sql = "INSERT INTO likes (user_id, artwork_id) VALUES ('$user_id', '$artwork_id')";
 
-    if (mysqli_num_rows($checkResult) == 0) {
-       
-        $insertQuery = "INSERT INTO likes (user_id, artwork_id) VALUES ($userId, $artworkId)";
-        if (mysqli_query($con, $insertQuery)) {
-            echo 'success';
-        } else {
-            echo 'error';
-        }
+    if ($conn->query($sql) === TRUE) {
+        echo "Like action successful";
     } else {
-        
-        $deleteQuery = "DELETE FROM likes WHERE user_id = $userId AND artwork_id = $artworkId";
-        if (mysqli_query($con, $deleteQuery)) {
-            echo 'unliked';
-        } else {
-            echo 'error';
-        }
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
-} else {
-    
-    echo 'invalid_request';
 }
+
+$conn->close();
+
 ?>
