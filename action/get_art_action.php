@@ -53,7 +53,54 @@ mysqli_stmt_close($stmt);
             <i class="fas fa-comment"></i>
         </a>
 
-            <i class="fas fa-heart"></i>
+        <i class="fas fa-heart" id="like-icon" data-artwork-id="<?php echo $post['artworkId']; ?>"></i>
+        <span id="like-count">0</span> Likes
+
         </div>
     </div>
 <?php endforeach; ?>
+
+<script>
+    $(document).ready(function(){
+        // Add click event listener to the heart icons
+        $(".fa-heart").click(function(event) {
+            event.preventDefault();
+            
+            // Get the artwork ID associated with the like button
+            var artworkId = $(this).data('artwork-id');
+            
+            // Send AJAX request to like_action.php
+            $.ajax({
+                type: "POST",
+                url: "../action/like_action.php",
+                data: { artworkId: artworkId },
+                success: function(response) {
+                    if (response.trim() === "success" || response.trim() === "already_liked") {
+                        // Update heart color and count
+                        var heartIcon = $("#like-icon-" + artworkId);
+                        var likeCount = $("#like-count-" + artworkId);
+                        var currentLikes = parseInt(likeCount.text());
+
+                        if (response.trim() === "success") {
+                            // Increment like count
+                            likeCount.text(currentLikes + 1);
+                        } else {
+                            // Decrement like count (if already liked)
+                            likeCount.text(currentLikes - 1);
+                        }
+
+                        // Toggle heart color
+                        heartIcon.toggleClass("liked");
+                    } else {
+                        // Handle error
+                        console.log("Error: " + response);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // Handle error
+                    console.log("An error occurred: " + error);
+                }
+            });
+        });
+    });
+</script>

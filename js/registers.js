@@ -7,12 +7,14 @@ $(document).ready(function(){
 
             reader.onload = function (e) {
                 // Display the selected image
-                $(".image-upload-icon i").removeClass('bx-user-circle').addClass('profile-picture').attr('src', e.target.result);
+                $(".image-upload-icon").attr('src', e.target.result);
             };
 
             reader.readAsDataURL(input.files[0]);
         }
     });
+
+
 
     $("#btn-submit").click(function(event){
         event.preventDefault();

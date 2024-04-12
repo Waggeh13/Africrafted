@@ -15,29 +15,24 @@ if(isset($_POST['comment-submit'])){
     if($artwork_id_result && $artwork_id_row = $artwork_id_result->fetch_assoc()) {
         $artwork_id = $artwork_id_row['artwork_id'];
 
-        // Check if the artwork ID matches the one in the form data
-        if ($_POST['artwork_id'] == $artwork_id) {
-            // Prepare the SQL statement to insert the comment
-            $insert_comment_sql = "INSERT INTO comments (user_id, comment, comment_date, artwork_id) VALUES (?, ?, NOW(), ?)";
-            $stmt = $con->prepare($insert_comment_sql);
+        // Prepare the SQL statement to insert the comment
+        $insert_comment_sql = "INSERT INTO comments (user_id, comment, comment_date, artwork_id) VALUES (?, ?, NOW(), ?)";
+        $stmt = $con->prepare($insert_comment_sql);
 
-            // Bind parameters
-            $stmt->bind_param("isi", $user_id, $comment, $artwork_id);
+        // Bind parameters
+        $stmt->bind_param("isi", $user_id, $comment, $artwork_id);
 
-            // Execute the statement
-            if($stmt->execute()){
-                // Redirect back to the same page after successful comment submission
-                header('Location: ../admin/comment.php');
-                exit();
-            } else {
-                echo "Error: " . $sql . "<br>" . $con->error;
-            }
-
-            // Close the statement
-            $stmt->close();
+        // Execute the statement
+        if($stmt->execute()){
+            // Redirect back to the same page after successful comment submission
+            header('Location: ../admin/comment.php');
+            exit();
         } else {
-            echo "Artwork ID mismatch";
+            echo "Error: " . $sql . "<br>" . $con->error;
         }
+
+        // Close the statement
+        $stmt->close();
     } else {
         echo "Error fetching artwork ID";
     }

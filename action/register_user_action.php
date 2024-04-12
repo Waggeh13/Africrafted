@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["username"]) && !empty
 
         if (mysqli_query($con, $query)) {
             // Success message
-            echo "successful";
+            echo "success";
         } else {
             // Handle database insertion error
             echo "Error: " . $query . "<br>" . mysqli_error($con);

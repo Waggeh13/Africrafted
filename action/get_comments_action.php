@@ -19,19 +19,26 @@ while ($row = $result->fetch_assoc()) {
     $comment_time = $row['comment_date'];
     $artwork_id = $row['artwork_id'];
 
-    // Start a new container for each comment
-    $posts .= '<div class="comment-container" data-artwork-id="'.$artwork_id.'">'; 
+    // Check if the logged-in user is the owner of the comment
+    if ($_SESSION['user_id'] == $uid) {
+        // Start a new container for each comment
+        $posts .= '<div class="comment-container" data-artwork-id="'.$artwork_id.'">'; 
 
-    $posts .= '<div class="comment-box">
-                   <div class="comment-avatar">'.$username.'</div>
-                   <div class="comment-content">
-                       <p class="comment-text">'.$comment.'</p>
-                       <span class="comment-time">'.$comment_time.'</span>
-                   </div>
-               </div>';
+        $posts .= '<div class="comment-box">
+                       <div class="comment-avatar">'.$username.'</div>
+                       <div class="comment-content">
+                           <p class="comment-text">'.$comment.'</p>
+                           <span class="comment-time">'.$comment_time.'</span>
+                           <form action="../action/delete_comment.php" method="post">
+                               <input type="hidden" name="comment_id" value="'.$comment_id.'">
+                               <button type="submit" class="delete-comment-btn">Delete</button>
+                           </form>
+                       </div>
+                   </div>';
 
-    // Close the comment container
-    $posts .= '</div>'; 
+        // Close the comment container
+        $posts .= '</div>'; 
+    }
 }
 
 echo $posts;
@@ -48,7 +55,6 @@ echo $posts;
         border-radius: 8px;
     }
 
-
     .comment-content {
         overflow: hidden;
     }
@@ -59,5 +65,14 @@ echo $posts;
 
     .comment-time {
         /* Add your styles for the comment time */
+    }
+    
+    .delete-comment-btn {
+        background-color: #ff0000;
+        color: #ffffff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
     }
 </style>

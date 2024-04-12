@@ -51,16 +51,6 @@ mysqli_stmt_close($stmt);
             <i class="fas fa-comment" onclick="showCommentSection(event, <?php echo $post['artworkId']; ?>)"></i>
             <i class="fas fa-heart"></i>
         </div>
-        <!-- Comment section -->
-        <div class="comment-section hidden" id="comment-section-<?php echo $post['artworkId']; ?>">
-            <!-- Add comment form or display comments here -->
-            <form class="comment-form" onsubmit="submitComment(event, <?php echo $post['artworkId']; ?>)">
-                <textarea name="comment" placeholder="Write a comment..." required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-            <div class="comments">
-                <!-- Comments will be dynamically added here -->
-            </div>
-        </div>
+        
     </div>
 <?php endforeach; ?>

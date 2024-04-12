@@ -22,7 +22,7 @@ session_start();
                     
                     <div class="profile-picture-frame">
                         <a href="../admin/profile.php">
-                            <img src="<?php echo $profile_picture; ?>" alt="Profile Picture">
+                            <img class="image-upload-icon" src="<?php echo $profile_picture; ?>" alt="Profile Picture">
                         </a>
                     </div>
 
